@@ -1,252 +1,35 @@
-css/* ==========================================================================
-   1. GLOBAL RETAIL STYLING & CORE DESIGN SYSTEM
-   ========================================================================== */
-:root {
-    --bg-primary: #0a0a0c;       /* Ultra-dark canvas background */
-    --bg-surface: #121215;       /* Elevated dark grey surface cards */
-    --text-main: #f3f4f6;        /* Bright white text for optimal reading */
-    --text-muted: #9ca3af;       /* Off-white text for secondary context */
-    --accent-color: #3b82f6;     /* Minimalist interactive link blue */
-    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+ <!-- 7. MINIMALIST FOOTER & CONTACT HUB -->
+    <footer id="contact">
+        <h2>Let's build reliable software systems.</h2>
+        <p>Available for test leadership consulting engagements, framework design, or senior QA leadership roles.</p>
+        
+        <!-- CUSTOM INTERACTIVE CONTACT FORM -->
+        <div class="contact-form-container">
+            <form action="https://formspree.io" method="POST" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="_replyto" placeholder="john@example.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Describe your project requirements or open role..." required></textarea>
+                </div>
+                <!-- Anti-spam honeypot field hidden from users -->
+                <input type="text" name="_gotcha" style="display:none">
+                <button type="submit" class="btn form-submit-btn">Send Message</button>
+            </form>
+        </div>
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-    background-color: var(--bg-primary);
-    font-family: var(--font-stack);
-    color: var(--text-main);
-    -webkit-font-smoothing: antialiased;
-}
-
-body {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    line-height: 1.6;
-}
-
-/* Common Layout Spacing for Minimalist Dynamic Blocks */
-section {
-    padding: 7rem 0;
-    border-bottom: 1px solid #1f2937;
-}
-
-/* ==========================================================================
-   2. FIXED FIXED TOP NAVIGATION MENU
-   ========================================================================== */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(10, 10, 12, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-nav {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 1.2rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav .logo {
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: -0.025em;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
-}
-
-nav ul a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: var(--transition-smooth);
-}
-
-nav ul a:hover {
-    color: var(--text-main);
-}
-
-/* ==========================================================================
-   3. THE MAIN HERO STATEMENT SECTION
-   ========================================================================== */
-#hero {
-    min-height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 8rem;
-}
-
-#hero h1 {
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 1.05;
-    margin-bottom: 1.5rem;
-}
-
-#hero h2 {
-    font-size: clamp(1.25rem, 3vw, 2rem);
-    font-weight: 400;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    max-width: 800px;
-}
-
-#hero p {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    max-width: 650px;
-    margin-bottom: 3rem;
-}
-
-/* Action Trigger Component Elements */
-.buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
-    background-color: var(--text-main);
-    color: var(--bg-primary);
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 6px;
-    transition: var(--transition-smooth);
-}
-
-.btn:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-}
-
-.btn.secondary {
-    background-color: transparent;
-    color: var(--text-main);
-    border: 1px solid #374151;
-}
-
-.btn.secondary:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: var(--text-main);
-}
-
-/* ==========================================================================
-   4. A HIGH IMPACT METRICS GRID SYSTEM
-   ========================================================================== */
-#metrics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-}
-
-.metric-card {
-    background-color: var(--bg-surface);
-    padding: 2.5rem 2rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    transition: var(--transition-smooth);
-}
-
-.metric-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.metric-card h3 {
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.03em;
-}
-
-.metric-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-/* ==========================================================================
-   5. VERTICAL CHRONOLOGICAL JOURNEY TIMELINE
-   ========================================================================== */
-#experience h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 3.5rem;
-    letter-spacing: -0.03em;
-}
-
-.job {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    margin-bottom: 3rem;
-    gap: 1.5rem;
-}
-
-.job .date {
-    font-family: monospace;
-    font-size: 1rem;
-    color: var(--text-muted);
-    padding-top: 0.2rem;
-}
-
-.job .details h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.job .details p {
-    color: var(--text-muted);
-}
-
-/* ==========================================================================
-   6. DYNAMIC ADAPTIVE RESPONSIVENESS BREAKPOINTS
-   ========================================================================== */
-@media (max-width: 768px) {
-    body {
-        padding: 0 1.2rem;
-    }
-    
-    section {
-        padding: 4.5rem 0;
-    }
-    
-    nav ul {
-        gap: 1.2rem;
-    }
-
-    .job {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-        margin-bottom: 2.5rem;
-    }
-
-    .job .date {
-        margin-bottom: 0.25rem;
-    }
-}
+        <div class="footer-links">
+            <a href="mailto:your.email@example.com">Email Profile</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com" target="_blank">GitHub Repository</a>
+        </div>
+        <p class="copyright">© 2026. Automated Git Deployment Framework Canvas Layout.</p>
+    </footer>
